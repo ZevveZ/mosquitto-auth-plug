@@ -210,7 +210,10 @@ int be_mysql_getuser(void *handle, const char *username, const char *password, c
 		free(u);
 		return BACKEND_ERROR;
 	}
-	sprintf(query, conf->userquery, u);
+	//sprintf(query, conf->userquery, u);
+	// there are two %s in userquery
+	sprintf(query, conf->userquery, u, u);
+	
 	free(u);
 
 	if (mysql_query(conf->mysql, query)) {
