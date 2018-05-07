@@ -6,5 +6,4 @@ np
 jp*.conf
 Makefile
 *.a
-config.mk
 sundry
